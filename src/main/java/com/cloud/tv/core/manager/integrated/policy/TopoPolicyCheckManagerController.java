@@ -1,0 +1,137 @@
+package com.cloud.tv.core.manager.integrated.policy;
+
+import com.alibaba.fastjson.JSONObject;
+import com.cloud.tv.core.service.ISysConfigService;
+import com.cloud.tv.core.utils.NodeUtil;
+import com.cloud.tv.core.utils.ResponseUtil;
+import com.cloud.tv.dto.CheckDto;
+import com.cloud.tv.dto.TopoPolicyDto;
+import com.cloud.tv.entity.SysConfig;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RequestMapping("/nspm/patrol")
+@RestController
+public class TopoPolicyCheckManagerController {
+
+    @Autowired
+    private NodeUtil nodeUtil;
+    @Autowired
+    private ISysConfigService sysConfigService;
+
+    @ApiOperation("获取检查最新记录")
+    @PostMapping(value = "/check/newestRecord")
+    public Object ruleList(){
+        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+        String token = sysConfig.getNspmToken();
+        if(token != null){
+            String url = "/patrol/api/check/overview/newestRecord";
+            Object object = this.nodeUtil.postFormDataBody(null, url, token);
+            JSONObject result = JSONObject.parseObject(object.toString());
+            if(result.get("code") != null){
+                if(!result.get("code").toString().equals("0")){
+                    return ResponseUtil.error(result.get("msg").toString());
+                }
+            }
+            return ResponseUtil.ok(result);
+        }
+        return ResponseUtil.error();
+    }
+
+    @ApiOperation("检查设备计数")
+    @PostMapping(value = "/check/statistics/mark")
+    public Object mark(){
+        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+        String token = sysConfig.getNspmToken();
+        if(token != null){
+            String url = "/patrol/api/check/statistics/mark";
+            Object object = this.nodeUtil.postFormDataBody(null, url, token);
+            JSONObject result = JSONObject.parseObject(object.toString());
+            if(result.get("code") != null){
+                if(!result.get("code").toString().equals("0")){
+                    return ResponseUtil.error(result.get("msg").toString());
+                }
+            }
+            return ResponseUtil.ok(result);
+        }
+        return ResponseUtil.error();
+    }
+
+    @ApiOperation("查询结果统计小类数据")
+    @PostMapping(value = "/check/ruleType/list")
+    public Object ruleType(@RequestBody(required = false)CheckDto dto){
+        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+        String token = sysConfig.getNspmToken();
+        if(token != null){
+            String url = "/patrol/api/check/statistics/ruleType/list";
+            Object object = this.nodeUtil.postFormDataBody(dto, url, token);
+            JSONObject result = JSONObject.parseObject(object.toString());
+            if(result.get("code") != null){
+                if(!result.get("code").toString().equals("0")){
+                    return ResponseUtil.error(result.get("msg").toString());
+                }
+            }
+            return ResponseUtil.ok(result);
+        }
+        return ResponseUtil.error();
+    }
+
+    @ApiOperation("统计列表数据")
+    @PostMapping(value = "/check/summary/list")
+    public Object summary(@RequestBody(required = false)CheckDto dto){
+        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+        String token = sysConfig.getNspmToken();
+        if(token != null){
+            String url = "/patrol/api/check/statistics/summary/list";
+            Object object = this.nodeUtil.postFormDataBody(dto, url, token);
+            JSONObject result = JSONObject.parseObject(object.toString());
+            if(result.get("code") != null){
+                if(!result.get("code").toString().equals("0")){
+                    return ResponseUtil.error(result.get("msg").toString());
+                }
+            }
+            return ResponseUtil.ok(result);
+        }
+        return ResponseUtil.error();
+    }
+
+    @ApiOperation("风险规则检查")
+    @PostMapping(value = "/check/overview/check")
+    public Object check(@RequestBody(required = false)CheckDto dto){
+        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+        String token = sysConfig.getNspmToken();
+        if(token != null){
+            String url = "/patrol/api/check/overview/check";
+            Object object = this.nodeUtil.postBody(dto, url, token);
+            JSONObject result = JSONObject.parseObject(object.toString());
+            if(result.get("code") != null){
+                if(!result.get("code").toString().equals("0")){
+                    return ResponseUtil.error(result.get("msg").toString());
+                }
+            }
+            return ResponseUtil.ok(result);
+        }
+        return ResponseUtil.error();
+    }
+
+    @ApiOperation("风险规则检查进度条")
+    @PostMapping(value = "/check/overview/percentage")
+    public Object percentage(){
+        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+        String token = sysConfig.getNspmToken();
+        if(token != null){
+            String url = "/patrol/api/check/overview/percentage";
+            Object object = this.nodeUtil.postFormDataBody(null, url, token);
+            JSONObject result = JSONObject.parseObject(object.toString());
+            if(result.get("code") != null){
+                if(!result.get("code").toString().equals("0")){
+                    return ResponseUtil.error(result.get("msg").toString());
+                }
+            }
+            return ResponseUtil.ok(result);
+        }
+        return ResponseUtil.error();
+    }
+
+}

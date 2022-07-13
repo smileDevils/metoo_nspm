@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.tv.core.mapper.DeviceMapper">
+
+    <resultMap id="Base_Result_Map" type="com.cloud.tv.entity.Device">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="index" column="index"></result>
+        <collection property="vendorList" ofType="com.cloud.tv.entity.Vendor" columnPrefix="mtv_" >
+            <result column="name" property="name"></result>
+        </collection>
+    </resultMap>
+
+
+
+    <select id="query" resultMap="Base_Result_Map">
+        SELECT mtd.name as name, mtv.name as mtv_name FROM
+          metoo_topo_device mtd
+        LEFT JOIN
+           metoo_topo_vendor mtv
+         ON mtd.id = mtv.deviceId
+          WHERE `index` in(0,1,2)
+    </select>
+</mapper>

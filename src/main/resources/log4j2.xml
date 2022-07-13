@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--日志门面 JCL vs slf4j JCL2014年已停更-->
+<!--日志级别：ALL < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF -->
+<!--Configuration后面Status用于设置Log4j2自身内部的信息，可以不设置，当设置为trace时，可以看到Log4j2内部各种详细输出-->
+<configuration status="INFO">
+    <!--<properties>-->
+        <!--<property name="LOG_HOME"></property>-->
+<!--    &lt;!&ndash;</properties>&ndash;&gt;
+    <Properties>
+        &lt;!&ndash; 定义日志格式 &ndash;&gt;
+        <Property name="log.pattern">%d{MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36}%n%msg%n%n</Property>
+        &lt;!&ndash; 定义文件名变量 &ndash;&gt;
+        <Property name="file.err.filename">target/test.log</Property>
+        &lt;!&ndash;<Property name="file.err.pattern">log/err.%i.log.gz</Property>&ndash;&gt;
+    </Properties>-->
+    <!--定义appender-->
+    <appenders>
+        <!--输出信息到控制台-->
+        <console name="Console" target="SYSTEM_ERR"><!--SYSTEM_OUT-->
+            <!--控制日志输出的格式-->
+            <patternLayout pattern="%d{yyyy-MM-dd HH:mm}[%t]%-5level %logger{36} - %msg%n" />
+        </console>
+        <!--文件位置-->
+        <File name="nspm" fileName="logs/nspm.log" append="true">
+            <patternLayout pattern="%d{yyyy-MM-dd HH:mm}[%t]%-5level %logger{36} - %msg%n" />
+        </File>
+    </appenders>
+
+    <!--定义logger，只有定义了logger并引入的appender，appender才会生效-->
+    <!--root：用于指定项目的根日志，如果没有单独指定Logger，则会使用root作为默认的日志输出-->
+    <Loggers>
+        <Root level="info">
+            <Appender-ref ref="Console"></Appender-ref>
+            <Appender-ref ref="nspm"></Appender-ref>
+        </Root>
+    </Loggers>
+
+</configuration>
