@@ -20,5 +20,6 @@ public class CheckDto {
     private Integer currentPage;
     @ApiModelProperty("需要勾选的设备")
     private List<String> deviceUUIDs;
+    private String recordId;
 
 }

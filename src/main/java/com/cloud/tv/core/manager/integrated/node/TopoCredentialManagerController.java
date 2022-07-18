@@ -55,10 +55,10 @@ public class TopoCredentialManagerController {
                 dto.setBranchLevel(user.getGroupLevel());
             }
             String url = "/push/credential/getall";
-            Object result = this.nodeUtil.postBody(dto, url, token);
-            JSONObject object = JSONObject.parseObject(result.toString());
-            if (object.get("content") != null) {
-                JSONObject content = JSONObject.parseObject(object.get("content").toString());
+            Object object = this.nodeUtil.postBody(dto, url, token);
+            JSONObject result = JSONObject.parseObject(object.toString());
+            if (result.get("content") != null) {
+                JSONObject content = JSONObject.parseObject(result.get("content").toString());
                 if (content.get("list") != null) {
                     List list = new ArrayList();
                     JSONArray arrays = JSONArray.parseArray(content.get("list").toString());
@@ -75,7 +75,7 @@ public class TopoCredentialManagerController {
                             }
                         }
                     }
-                    object.put("list", list);
+                    result.put("list", list);
                 }
             }
 
@@ -108,7 +108,6 @@ public class TopoCredentialManagerController {
                 if (credentialJson.get("content") != null) {
                     JSONObject content = JSONObject.parseObject(credentialJson.get("content").toString());
                     if (content.get("list") != null) {
-                        List list = new ArrayList();
                         JSONArray arrays = JSONArray.parseArray(content.get("list").toString());
                         for(Iterator var10 = arrays.iterator(); var10.hasNext();) {
                             Object array = var10.next();

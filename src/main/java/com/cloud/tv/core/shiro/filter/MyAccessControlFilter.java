@@ -11,16 +11,24 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.AccessControlFilter;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 
 public class MyAccessControlFilter extends AccessControlFilter {
 
+    @Value("${spring.profiles.active}")
+    private String env;
 
     @Override
     protected boolean preHandle(ServletRequest request, ServletResponse response) throws Exception {
         //判断用户是通过记住我功能自动登录,此时session失效
+//        if(env.equalsIgnoreCase("dev")){
+//            return true;
+//        }
         Subject subject = SecurityUtils.getSubject();
         if(subject.getPrincipal() != null){
             // 如果未认证并且未IsreMenmberMe(Session失效问题)

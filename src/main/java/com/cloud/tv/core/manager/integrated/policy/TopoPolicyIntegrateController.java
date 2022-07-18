@@ -44,6 +44,18 @@ public class TopoPolicyIntegrateController {
     @Autowired
     private IssuedService ssuedService;
 
+    public static void main(String[] args) {
+        String value = "";
+        int strLen;
+        if (value != null && (strLen = value.length()) != 0) {
+            for(int i = 0; i < strLen; ++i) {
+                if (!Character.isWhitespace(value.charAt(i))) {
+                    System.out.println(false);
+                }
+            }
+        }
+    }
+
     @RequestMapping("/viewData")
     public Object vendors(@RequestBody(required = false) TopoPolicyDto dto){
         SysConfig sysConfig = this.sysConfigService.findSysConfigList();
@@ -142,6 +154,23 @@ public class TopoPolicyIntegrateController {
                     }else{
                         data.put("grade", new Double(100));
                     }
+                    // 根据设备ip查询策略检查分析
+//                    String check = "/patrol/api/check/statistics/summary/list";
+//                    Object checkObject = this.nodeUtil.postFormDataBody(dto, check, token);
+//                    JSONObject result = JSONObject.parseObject(checkObject.toString());
+//                    if(result.get("code") != null && result.get("code").toString().equals("0")){
+//                        if(result.get("content") != null){
+//                            JSONObject content = JSONObject.parseObject(result.getString("content"));
+//                            JSONArray list = JSONArray.parseArray(content.getString("list"));
+//                            for (Object element : list){
+//                                JSONObject devices = JSONObject.parseObject(element.toString());
+//                                String ip = devices.getString("ip");
+//                                if(ip.equalsIgnoreCase(data.getString("ip"))){
+//                                    data.put("checkUpdateTime", devices.get("updateTime"));
+//                                }
+//                            }
+//                        }
+//                    }
                     policys.add(data);
                 }
             }
@@ -151,150 +180,150 @@ public class TopoPolicyIntegrateController {
         return ResponseUtil.ok();
     }
 
-    @RequestMapping("/viewData1")
-    public Object vendors1(@RequestBody(required = false) TopoPolicyDto dto){
-        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
-        String token = sysConfig.getNspmToken();
-        if(token != null){
-            String url = "/topology/node/queryNode.action";
-            User currentUser = ShiroUserHolder.currentUser();
-            User user = this.userService.findByUserName(currentUser.getUsername());
-            dto.setBranchLevel(user.getGroupLevel());
-            dto.setDisplay(0);
-            dto.setOrigin(0);
-            dto.setLimit(1000000);
-            JSONArray arrays = new JSONArray();
-            Integer total = 0;
-            if(dto.getType() != null && !dto.getType().equals("")){
-                Object nodes = this.nodeUtil.getBody(dto, url, token);
-                JSONObject object = JSONObject.parseObject(nodes.toString());
-                JSONArray array = JSONArray.parseArray(object.get("data").toString());
-                arrays.addAll(array);
-                total = Integer.parseInt(object.get("total").toString());
-            }else{
-                List<String> types = new ArrayList();
-                types.add("0");
-                types.add("1");
-                for(String type : types){
-                    dto.setType(type);
-                    Object nodes = this.nodeUtil.getBody(dto, url, token);
-                    JSONObject object = JSONObject.parseObject(nodes.toString());
-                    if(object.get("data") != null) {
-                        JSONArray array = JSONArray.parseArray(object.get("data").toString());
-                        arrays.addAll(array);
-                        total += Integer.parseInt(object.get("total").toString());
-                    }
-                }
-            }
-            Map map = new HashMap();
-            map.put("total", total);
-            String url2 = "/topology-policy/report/policyView/viewData";
-            List policys = new ArrayList();
-            for(Object obj : arrays){
-                if(obj != null){
-                    JSONObject node = JSONObject.parseObject(obj.toString());
-                    if(node.get("uuid") != null){
-                        TopoPolicyDto policyDto = new TopoPolicyDto();
-                            policyDto.setCurrentPage(1);
-                            policyDto.setPageSize(dto.getLimit());
-                            policyDto.setVendor(node.get("vendorName").toString());
-                            policyDto.setType(node.get("type").toString());
-                            policyDto.setDeviceUuid(node.get("uuid").toString());
-                            Object policy = this.nodeUtil.postFormDataBody(policyDto, url2, token);
-                            JSONObject json = JSONObject.parseObject(policy.toString());
-                            if(json.get("data") != null){
-                            JSONArray data = JSONArray.parseArray(json.get("data").toString());
-
-                            JSONObject dataJson = JSONObject.parseObject(data.get(0).toString());
-                            dataJson.put("deviceName", dataJson.get("deviceName") != null  ? dataJson.get("deviceName") : "");
-                            // 策略总数
-                            Integer policyTotal = 0;
-//                            Integer policyTotal = dataJson.get("policyTotal") != null ? Integer.parseInt(dataJson.get("policyTotal").toString()) : 0;
-//                            dataMap.put("policyTotal", policyTotal);
-                            if(dataJson.get("policyTotalDetail") != null){
-                                JSONArray policyTotalDetails = JSONArray.parseArray(dataJson.get("policyTotalDetail").toString());
-                                JSONObject policyTotalDetail = JSONObject.parseObject(policyTotalDetails.get(0).toString());
-                                Integer aclTotal = 0;
-                                Integer natTotal = 0;
-                                Integer safeTotal = 0;
-                                aclTotal = Integer.parseInt(policyTotalDetail.get("aclTotal").toString());
-                                natTotal = Integer.parseInt(policyTotalDetail.get("natTotal").toString());
-                                safeTotal = Integer.parseInt(policyTotalDetail.get("safeTotal").toString());
-                                policyTotal = aclTotal + natTotal + safeTotal;
-                                policyTotalDetail.remove("routTableTotal");
-                                policyTotalDetail.remove("staticRoutTotal");
-                                policyTotalDetail.remove("policyRoutTotal");
-                                dataJson.put("policyTotalDetail", policyTotalDetail);
-                            }
-                            dataJson.put("policyTotal", policyTotal);
-                            // 对象总数
-                            Integer objectTotal = dataJson.get("objectTotal") != null ? Integer.parseInt(dataJson.get("objectTotal").toString()) : 0;
-                            dataJson.put("objectTotal", objectTotal);
-                            Integer policysTotal  = policyTotal + objectTotal;
-                            if(policysTotal > 0){
-                                // 问题策略数
-                                dataJson.put("policyCheckTotal", dataJson.get("policyCheckTotal") != null ? dataJson.get("policyCheckTotal") : 0);
-                                // 问题对象数
-                                dataJson.put("objectCheckTotal", dataJson.get("objectCheckTotal") != null ? dataJson.get("objectCheckTotal") : 0);
-                                // 健康度
-                                // 计算问题策略权重
-                                double policyGrade = 0;
-                                if(dataJson.get("policyCheckTotalDetail") != null){
-                                    JSONArray detail = JSONArray.parseArray(dataJson.get("policyCheckTotalDetail").toString());
-                                    if(detail.size() > 0){
-                                        Map<String, Integer> policyMap = JSONObject.parseObject(detail.get(0).toString(), Map.class);
-                                        Set<String> keys = policyMap.keySet();
-                                        Iterator<String> it = keys.iterator();
-                                        while (it.hasNext()){
-                                            String key =  it.next();
-                                            // 获取策略权重
-                                            double weight = this.policyStatisticalService.getObjByCode(key);
-                                            Integer value = policyMap.get(key);
-                                            BigDecimal b1 = new BigDecimal(value);
-                                            BigDecimal b2 = new BigDecimal(weight);
-                                            policyGrade += b1.multiply(b2).doubleValue();
-                                        }
-                                    }
-                                }
-                                // 问题对象策略权重
-                                double objectGrade = 0;
-                                if(dataJson.get("objectCheckTotalDetail") != null){
-                                    JSONArray detail = JSONArray.parseArray(dataJson.get("objectCheckTotalDetail").toString());
-                                    if(detail.size() > 0){
-                                        Map<String, Integer> policyMap = JSONObject.parseObject(detail.get(0).toString(), Map.class);
-                                        Set<String> keys = policyMap.keySet();
-                                        Iterator<String> it = keys.iterator();
-                                        while (it.hasNext()){
-                                            String key =  it.next();
-                                            // 获取对象权重
-                                            double weight = this.policyStatisticalService.getObjByCode(key);
-                                            Integer value = policyMap.get(key);
-                                            BigDecimal b1 = new BigDecimal(value);
-                                            BigDecimal b2 = new BigDecimal(weight);
-                                            objectGrade += b1.multiply(b2).doubleValue();
-                                        }
-                                    }
-                                }
-                                double checkTotal = policyGrade + objectGrade;
-                                BigDecimal b1 = new BigDecimal(Double.toString(policysTotal));
-                                BigDecimal b2 = new BigDecimal(Double.toString(checkTotal));
-                                BigDecimal b3 = b2.divide(b1, 2, BigDecimal.ROUND_HALF_UP);
-                                BigDecimal b4 = new BigDecimal(1);
-                                if(b3.compareTo(b4) > 0)
-                                    dataJson.put("policyCheckTotal", 0);
-                                    else
-                                    dataJson.put("policyCheckTotal", b4.subtract(b3).doubleValue() * 100);
-                                policys.add(dataJson);
-                            }
-                        }
-                    }
-                }
-            }
-            map.put("policys", policys);
-            return ResponseUtil.ok(map);
-        }
-        return ResponseUtil.ok();
-    }
+//    @RequestMapping("/viewData1")
+//    public Object vendors1(@RequestBody(required = false) TopoPolicyDto dto){
+//        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+//        String token = sysConfig.getNspmToken();
+//        if(token != null){
+//            String url = "/topology/node/queryNode.action";
+//            User currentUser = ShiroUserHolder.currentUser();
+//            User user = this.userService.findByUserName(currentUser.getUsername());
+//            dto.setBranchLevel(user.getGroupLevel());
+//            dto.setDisplay(0);
+//            dto.setOrigin(0);
+//            dto.setLimit(1000000);
+//            JSONArray arrays = new JSONArray();
+//            Integer total = 0;
+//            if(dto.getType() != null && !dto.getType().equals("")){
+//                Object nodes = this.nodeUtil.getBody(dto, url, token);
+//                JSONObject object = JSONObject.parseObject(nodes.toString());
+//                JSONArray array = JSONArray.parseArray(object.get("data").toString());
+//                arrays.addAll(array);
+//                total = Integer.parseInt(object.get("total").toString());
+//            }else{
+//                List<String> types = new ArrayList();
+//                types.add("0");
+//                types.add("1");
+//                for(String type : types){
+//                    dto.setType(type);
+//                    Object nodes = this.nodeUtil.getBody(dto, url, token);
+//                    JSONObject object = JSONObject.parseObject(nodes.toString());
+//                    if(object.get("data") != null) {
+//                        JSONArray array = JSONArray.parseArray(object.get("data").toString());
+//                        arrays.addAll(array);
+//                        total += Integer.parseInt(object.get("total").toString());
+//                    }
+//                }
+//            }
+//            Map map = new HashMap();
+//            map.put("total", total);
+//            String url2 = "/topology-policy/report/policyView/viewData";
+//            List policys = new ArrayList();
+//            for(Object obj : arrays){
+//                if(obj != null){
+//                    JSONObject node = JSONObject.parseObject(obj.toString());
+//                    if(node.get("uuid") != null){
+//                        TopoPolicyDto policyDto = new TopoPolicyDto();
+//                            policyDto.setCurrentPage(1);
+//                            policyDto.setPageSize(dto.getLimit());
+//                            policyDto.setVendor(node.get("vendorName").toString());
+//                            policyDto.setType(node.get("type").toString());
+//                            policyDto.setDeviceUuid(node.get("uuid").toString());
+//                            Object policy = this.nodeUtil.postFormDataBody(policyDto, url2, token);
+//                            JSONObject json = JSONObject.parseObject(policy.toString());
+//                            if(json.get("data") != null){
+//                            JSONArray data = JSONArray.parseArray(json.get("data").toString());
+//
+//                            JSONObject dataJson = JSONObject.parseObject(data.get(0).toString());
+//                            dataJson.put("deviceName", dataJson.get("deviceName") != null  ? dataJson.get("deviceName") : "");
+//                            // 策略总数
+//                            Integer policyTotal = 0;
+////                            Integer policyTotal = dataJson.get("policyTotal") != null ? Integer.parseInt(dataJson.get("policyTotal").toString()) : 0;
+////                            dataMap.put("policyTotal", policyTotal);
+//                            if(dataJson.get("policyTotalDetail") != null){
+//                                JSONArray policyTotalDetails = JSONArray.parseArray(dataJson.get("policyTotalDetail").toString());
+//                                JSONObject policyTotalDetail = JSONObject.parseObject(policyTotalDetails.get(0).toString());
+//                                Integer aclTotal = 0;
+//                                Integer natTotal = 0;
+//                                Integer safeTotal = 0;
+//                                aclTotal = Integer.parseInt(policyTotalDetail.get("aclTotal").toString());
+//                                natTotal = Integer.parseInt(policyTotalDetail.get("natTotal").toString());
+//                                safeTotal = Integer.parseInt(policyTotalDetail.get("safeTotal").toString());
+//                                policyTotal = aclTotal + natTotal + safeTotal;
+//                                policyTotalDetail.remove("routTableTotal");
+//                                policyTotalDetail.remove("staticRoutTotal");
+//                                policyTotalDetail.remove("policyRoutTotal");
+//                                dataJson.put("policyTotalDetail", policyTotalDetail);
+//                            }
+//                            dataJson.put("policyTotal", policyTotal);
+//                            // 对象总数
+//                            Integer objectTotal = dataJson.get("objectTotal") != null ? Integer.parseInt(dataJson.get("objectTotal").toString()) : 0;
+//                            dataJson.put("objectTotal", objectTotal);
+//                            Integer policysTotal  = policyTotal + objectTotal;
+//                            if(policysTotal > 0){
+//                                // 问题策略数
+//                                dataJson.put("policyCheckTotal", dataJson.get("policyCheckTotal") != null ? dataJson.get("policyCheckTotal") : 0);
+//                                // 问题对象数
+//                                dataJson.put("objectCheckTotal", dataJson.get("objectCheckTotal") != null ? dataJson.get("objectCheckTotal") : 0);
+//                                // 健康度
+//                                // 计算问题策略权重
+//                                double policyGrade = 0;
+//                                if(dataJson.get("policyCheckTotalDetail") != null){
+//                                    JSONArray detail = JSONArray.parseArray(dataJson.get("policyCheckTotalDetail").toString());
+//                                    if(detail.size() > 0){
+//                                        Map<String, Integer> policyMap = JSONObject.parseObject(detail.get(0).toString(), Map.class);
+//                                        Set<String> keys = policyMap.keySet();
+//                                        Iterator<String> it = keys.iterator();
+//                                        while (it.hasNext()){
+//                                            String key =  it.next();
+//                                            // 获取策略权重
+//                                            double weight = this.policyStatisticalService.getObjByCode(key);
+//                                            Integer value = policyMap.get(key);
+//                                            BigDecimal b1 = new BigDecimal(value);
+//                                            BigDecimal b2 = new BigDecimal(weight);
+//                                            policyGrade += b1.multiply(b2).doubleValue();
+//                                        }
+//                                    }
+//                                }
+//                                // 问题对象策略权重
+//                                double objectGrade = 0;
+//                                if(dataJson.get("objectCheckTotalDetail") != null){
+//                                    JSONArray detail = JSONArray.parseArray(dataJson.get("objectCheckTotalDetail").toString());
+//                                    if(detail.size() > 0){
+//                                        Map<String, Integer> policyMap = JSONObject.parseObject(detail.get(0).toString(), Map.class);
+//                                        Set<String> keys = policyMap.keySet();
+//                                        Iterator<String> it = keys.iterator();
+//                                        while (it.hasNext()){
+//                                            String key =  it.next();
+//                                            // 获取对象权重
+//                                            double weight = this.policyStatisticalService.getObjByCode(key);
+//                                            Integer value = policyMap.get(key);
+//                                            BigDecimal b1 = new BigDecimal(value);
+//                                            BigDecimal b2 = new BigDecimal(weight);
+//                                            objectGrade += b1.multiply(b2).doubleValue();
+//                                        }
+//                                    }
+//                                }
+//                                double checkTotal = policyGrade + objectGrade;
+//                                BigDecimal b1 = new BigDecimal(Double.toString(policysTotal));
+//                                BigDecimal b2 = new BigDecimal(Double.toString(checkTotal));
+//                                BigDecimal b3 = b2.divide(b1, 2, BigDecimal.ROUND_HALF_UP);
+//                                BigDecimal b4 = new BigDecimal(1);
+//                                if(b3.compareTo(b4) > 0)
+//                                    dataJson.put("policyCheckTotal", 0);
+//                                    else
+//                                    dataJson.put("policyCheckTotal", b4.subtract(b3).doubleValue() * 100);
+//                                policys.add(dataJson);
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//            map.put("policys", policys);
+//            return ResponseUtil.ok(map);
+//        }
+//        return ResponseUtil.ok();
+//    }
 
 //    @RequestMapping("/viewData")
 //    public Object vendors(@RequestBody(required = false) TopoPolicyDto dto){
@@ -566,20 +595,6 @@ public class TopoPolicyIntegrateController {
         return ResponseUtil.badArgument();
     }
 
-    @ApiOperation("策略列表")
-    @PostMapping(value = "/rule-list-search")
-    public Object ruleListSearch(@RequestBody TopoPolicyDto dto){
-        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
-
-        String token = sysConfig.getNspmToken();
-        if(token != null){
-            String url = "/topology-policy/policy/rule-list-search";
-            Object object = this.nodeUtil.postFormDataBody(dto, url, token);
-            return ResponseUtil.ok(object);
-        }
-        return ResponseUtil.error();
-    }
-
     @ApiOperation("合并策略（详情）")
     @PostMapping(value = "/rule-list")
     public Object ruleList(@RequestBody(required = false) TopoPolicyDto dto){
@@ -627,19 +642,7 @@ public class TopoPolicyIntegrateController {
         return ResponseUtil.error();
     }
 
-    @ApiOperation("策略列表统计")
-    @PostMapping(value = "/policy-list-pie")
-    public Object policyListPie(@RequestBody(required = false) TopoPolicyDto dto){
-        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
 
-        String token = sysConfig.getNspmToken();
-        if(token != null){
-            String url = "/topology-policy/report/policy/policy-list-pie";
-            Object result = this.nodeUtil.postFormDataBody(dto, url, token);
-            return ResponseUtil.ok(result);
-        }
-        return ResponseUtil.error();
-    }
 
     @ApiOperation("策略集")
     @PostMapping(value = "/filter-list")

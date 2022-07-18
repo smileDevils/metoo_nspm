@@ -18,7 +18,7 @@ public class TopoCredentialDto {
     private String selectBox;
     private String branchLevel;
     private String enablePassword;
-    private String enableUsername;
+    private String enableUserName;
     private String enableName;
     private String loginName;
     private String loginPassword;

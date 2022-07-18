@@ -14,9 +14,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -164,9 +162,9 @@ public class LiveRoomManagerController {
     }*/
 
 
-    @RequiresPermissions("LK:ROOM")
+//    @RequiresPermissions("LK:ROOM")
     @ApiOperation("直播间列表")
-    @RequestMapping(value = "/list")
+    @PostMapping(value = "/list")
     public Object list(@RequestBody LiveRoomDto dto) {
         if(dto == null){
             dto  = new LiveRoomDto();
@@ -186,8 +184,6 @@ public class LiveRoomManagerController {
      * @param room
      * @return
      */
-
-//    @RequiresPermissions("ADMIN:LIVEROOM:UPDATE")
 
     @RequiresPermissions("LK:ROOM")
     @ApiOperation("直播间更新")

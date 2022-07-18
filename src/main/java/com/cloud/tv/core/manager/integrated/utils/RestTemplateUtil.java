@@ -2,10 +2,13 @@ package com.cloud.tv.core.manager.integrated.utils;
 
 import com.cloud.tv.core.service.ISysConfigService;
 import com.cloud.tv.core.utils.NodeUtil;
+import com.cloud.tv.core.utils.httpclient.UrlConvertUtil;
 import com.cloud.tv.entity.SysConfig;
 
 import java.io.*;
 import java.util.Base64;
+
+import org.apache.commons.beanutils.BeanMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.*;
@@ -28,6 +31,27 @@ public class RestTemplateUtil {
     private ISysConfigService sysConfigService;
     @Autowired
     private RestTemplate restTemplate;
+
+
+    @Autowired
+    private UrlConvertUtil urlConvertUtil;
+
+    public String parseUrl(String url){
+        return this.urlConvertUtil.convert(url);
+    }
+
+    public String getToken(){
+        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+        return sysConfig.getNspmToken();
+
+    }
+
+    public String remoteJsonRequest(String url, Object object){
+        url = this.parseUrl(url);
+        String token = this.getToken();
+        Map<String, Object> map = new BeanMap(object);
+        return null;
+    }
 
 
     // 获取文件流

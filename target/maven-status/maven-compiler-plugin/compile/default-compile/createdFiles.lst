@@ -36,6 +36,7 @@ com\cloud\tv\core\mapper\UserMapper.class
 com\cloud\tv\core\manager\admin\action\DeviceManagerController.class
 com\cloud\tv\core\manager\admin\tools\MonitorTools.class
 com\cloud\tv\core\shiro\filter\AuthenticationFilter.class
+com\cloud\tv\core\manager\integrated\policy\TestHtmlComtroller.class
 com\cloud\tv\core\manager\integrated\socket\ClientWss$1.class
 com\cloud\tv\core\service\impl\LiveRoomServiceImpl.class
 com\cloud\tv\core\manager\view\action\ConvertAction.class
@@ -115,6 +116,7 @@ com\cloud\tv\vo\UserVo.class
 com\cloud\tv\core\utils\DataStructure\MyEnum.class
 com\cloud\tv\dto\CourseDto.class
 com\cloud\tv\entity\Grade.class
+com\cloud\tv\core\manager\integrated\policy\TopoPolocyListManagerController.class
 com\cloud\tv\core\utils\httpclient\HttpURLConnection.class
 com\cloud\tv\core\config\dbconfig\DataSourceConfig.class
 com\cloud\tv\core\utils\SystemInfoUtils.class
