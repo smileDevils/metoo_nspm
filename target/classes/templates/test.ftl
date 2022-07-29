@@ -5,7 +5,9 @@
     <title></title>
 </head>
 <body>
-        <h1>侠客行</h1>
-       <p>${result.code!}</P>
+        <h1>测试FreeMarker生成Html</h1>
+        <p>${code!'我是默认值'}</P>
+        <p>用户信息</P>
+        <p>${user.username}</p>
     </body>
-</html>
+</html

@@ -41,6 +41,11 @@
             </exclusions>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
         <!-- aop切面 -->
         <!--<dependency>-->
             <!--<groupId>org.springframework.boot</groupId>-->
@@ -81,15 +86,16 @@
             <version>2.4.10.RELEASE</version>
         </dependency>-->
         <!--Thymeleaf 依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+        <!--</dependency>-->
 
         <!--Freemarker 模板引擎-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
+
         </dependency>
 
         <!-- servlet 依赖的jar包start-->
@@ -360,6 +366,13 @@
             <groupId>aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.5.0</version>
+        </dependency>
+
+        <!--Zabbix -->
+        <dependency>
+            <groupId>io.github.hengyunabc</groupId>
+            <artifactId>zabbix-api</artifactId>
+            <version>0.0.2</version>
         </dependency>
     </dependencies>
 

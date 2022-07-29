@@ -7,14 +7,25 @@ import com.cloud.tv.core.manager.integrated.utils.RestTemplateUtil;
 import com.cloud.tv.core.service.IPolicyService;
 import com.cloud.tv.core.service.ISysConfigService;
 import com.cloud.tv.core.service.IUserService;
+import com.cloud.tv.core.service.zabbix.ProblemService;
+import com.cloud.tv.core.service.zabbix.ZabbixHostService;
+import com.cloud.tv.core.service.zabbix.ZabbixItemService;
+import com.cloud.tv.core.service.zabbix.ZabbixService;
 import com.cloud.tv.core.utils.NodeUtil;
 import com.cloud.tv.core.utils.ResponseUtil;
 import com.cloud.tv.core.utils.httpclient.UrlConvertUtil;
 import com.cloud.tv.dto.TopoNodeDto;
+import com.cloud.tv.dto.zabbix.HostDTO;
+import com.cloud.tv.dto.zabbix.ItemDTO;
+import com.cloud.tv.dto.zabbix.ProblemDTO;
 import com.cloud.tv.entity.SysConfig;
 import com.cloud.tv.entity.User;
+import com.github.pagehelper.util.StringUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import javafx.application.HostServices;
+import org.apache.commons.lang.StringUtils;
+import org.nutz.json.Json;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -23,10 +34,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Api("拓扑管理")
 @RequestMapping("/nspm/topology")
@@ -36,9 +44,9 @@ public class TopologyManagerController {
     @Autowired
     private ISysConfigService sysConfigService;
     @Autowired
-    private RestTemplate restTemplate;
-    @Autowired
     private NodeUtil nodeUtil;
+    @Autowired
+    private RestTemplate restTemplate;
     @Autowired
     private IUserService userService;
     @Autowired
@@ -47,10 +55,48 @@ public class TopologyManagerController {
     private IPolicyService policyService;
     @Autowired
     private UrlConvertUtil urlConvertUtil;
+    @Autowired
+    private ZabbixHostService zabbixHostService;
+    @Autowired
+    private ZabbixItemService zabbixItemService;
+    @Autowired
+    private ZabbixService zabbixService;
+    @Autowired
+    private ProblemService problemService;
+
 
     public static void main(String[] args) {
-        Double a = new Double(0);
-        System.out.println(a);
+        Map<Integer, Map<String, String>> map = new HashMap();
+        String str = "Interface 1 InLoopBack0: Description";
+        if(str.contains("Interface") && str.contains("Description")){
+            // 获取索引
+            int i = str.indexOf(" ") + 1;
+            String index = str.substring(i, i+1);
+            System.out.println(index);
+            int start = str.indexOf(" ", i + 1) + 1;
+            int last = str.indexOf(":");
+            String name = str.substring(start, last);
+            System.out.println(name);
+            Map map1 = map.get(index);
+
+        }
+        String interface_status = "Interface 3: Operational status";
+        if(interface_status.contains("Operational status")){
+            int i = interface_status.indexOf(" ") + 1;
+            String index = interface_status.substring(i, i+1);
+            System.out.println(index);
+        }
+
+        String ipaddress = "Ipaddress 9 157.0.0.1:IPMASK";
+        if(ipaddress.contains("Ipaddress") && ipaddress.contains("IPMASK")){
+            int i = ipaddress.indexOf(" ") + 1;
+            String index = ipaddress.substring(i, i+1);
+            int start = ipaddress.indexOf(" ", i + 1) + 1;
+            int last = ipaddress.indexOf(":");
+            ipaddress = ipaddress.substring(start, last);
+            System.out.println(ipaddress);
+        }
+
     }
 
     // 获取健康度
@@ -143,6 +189,49 @@ public class TopologyManagerController {
 //            return ResponseUtil.ok(results);
 //        }
 //        return ResponseUtil.error();
+//    }
+
+//    @ApiOperation("硬件性能")
+//    @GetMapping("/performance")
+//    public Object performance(String ip){
+//        if(StringUtils.isNotEmpty(ip)){
+//            HostDTO dto = new HostDTO();
+//            Map map = new HashMap();
+//            map.put("ip", Arrays.asList(ip));
+//            dto.setFilter(map);
+//            Object object = this.zabbixHostService.getHost(dto);
+//            JSONObject jsonObject = JSONObject.parseObject(object.toString());
+//            if(jsonObject.get("result") != null){
+//                Map data = new HashMap();
+//                JSONArray arrays = JSONArray.parseArray(jsonObject.getString("result"));
+//                if(arrays.size() > 0){
+//                    JSONObject host = JSONObject.parseObject(arrays.get(0).toString());
+//                    Integer hostid = host.getInteger("hostid");
+//                    if(hostid != null){
+//                        ItemDTO itemDto = new ItemDTO();
+//                        itemDto.setHostids(Arrays.asList(hostid));
+//                        Object itemObejct = this.zabbixItemService.getItem(itemDto);
+//                        JSONObject itemJSON = JSONObject.parseObject(itemObejct.toString());
+//                        if(itemJSON.get("result") != null){
+//                            JSONArray itemArray = JSONArray.parseArray(itemJSON.getString("result"));
+//                            if(itemArray.size() > 0){
+//                                for(Object array : itemArray){
+//                                    JSONObject item = JSONObject.parseObject(array.toString());
+//                                    if(item.getString("name").equals("hwEntityCpuUsage")){
+//                                        data.put("hwEntityCpuUsage", item.getString("lastclock"));
+//                                    }
+//                                    if(item.getString("name").equals("hwEntityMemUsage")){
+//                                        data.put("hwEntityMemUsage", item.getString("lastclock"));
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//                return ResponseUtil.ok(data);
+//            }
+//        }
+//        return ResponseUtil.badArgument();
 //    }
 
 
@@ -245,7 +334,6 @@ public class TopologyManagerController {
     @RequestMapping(value="/topology-layer/layerInfo/GET/defaultLayer")
     public Object defaultLayer(){
         SysConfig sysConfig = this.sysConfigService.findSysConfigList();
-
         String token = sysConfig.getNspmToken();
         if(token != null){
             String url = "/topology-layer/layerInfo/GET/defaultLayer";
@@ -331,8 +419,80 @@ public class TopologyManagerController {
         return ResponseUtil.error();
     }
 
+    @ApiOperation("硬件性能")
+    @RequestMapping("/topology-layer/usage")
+    public Object usage(@RequestBody(required = false) TopoNodeDto dto){
+        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+        String token = sysConfig.getNspmToken();
+        if(token != null){
+            String url = "/topology-layer/layerInfo/GET/getLayerByUuid";
+            Object object = this.nodeUtil.getBody(dto, url, token);
+            JSONObject result = JSONObject.parseObject(object.toString());
+            if(result.get("content") != null){
+                JSONObject content = JSONObject.parseObject(result.get("content").toString());
+                if(content.get("layout") != null){
+                    JSONObject layout = JSONObject.parseObject(content.get("layout").toString());
+                    Map map = new HashMap();
+                    for (Map.Entry<String,Object> entry : layout.entrySet()){
+                        JSONObject value = JSONObject.parseObject(entry.getValue().toString());
+                        if(value.getString("nodeType").equals("router") || value.getString("nodeType").equals("firewall")){
+                           // 性能
+                            JSONObject nodeMessage = JSONObject.parseObject(value.getString("nodeMessage"));
+                            String ip = nodeMessage.getString("primaryId");
+                            List names = Arrays.asList("CpuUsage", "MemUsage", "System name");
+                            Object usage = this.zabbixService.getUsage(ip, names);
+                            map.put(entry.getKey(), usage);
+                        }
+                    }
+                    return ResponseUtil.ok(map);
+                }
+            }
+            return ResponseUtil.ok();
+        }
+        return ResponseUtil.error();
+    }
 
-    @ApiOperation("拓扑详情")
+    @ApiOperation("设备信息")
+    @RequestMapping("/topology-layer/deviceInfo")
+    public Object deviceInfo(@RequestBody(required = false) TopoNodeDto dto){
+        if(StringUtils.isEmpty(dto.getIp())){
+            return ResponseUtil.badArgument();
+        }
+        List names = Arrays.asList("System name", "System description", "Uptime", "CpuUsage", "MemUsage");
+        Object object = this.zabbixService.getDeviceInfo(dto.getIp(), names, dto.getLimit(), dto.getTime_till(), dto.getTime_from());
+        return ResponseUtil.ok(object);
+    }
+
+    @ApiOperation("")
+    @GetMapping("/topology-layer/refresh")
+    public Object refresh(@RequestParam("itemid") String itemid, @RequestParam("limit") Integer limit){
+        if(StringUtils.isEmpty(itemid)){
+            return ResponseUtil.badArgument();
+        }
+        return this.zabbixService.refresh(itemid, limit);
+    }
+
+    @ApiOperation("端口信息")
+    @PostMapping("/topology-layer/port")
+    public Object port(@RequestBody(required = false) TopoNodeDto dto){
+        if(StringUtils.isEmpty(dto.getIp())){
+            return ResponseUtil.badArgument();
+        }
+        Object object = this.zabbixService.getInterfaceInfo(dto.getIp());
+        return ResponseUtil.ok(object);
+    }
+
+    @ApiOperation("流量")
+    @GetMapping("/topology-layer/history")
+    public Object history(TopoNodeDto dto){
+        if(StringUtils.isEmpty(dto.getIp())){
+            return ResponseUtil.badArgument();
+        }
+        Object object = this.zabbixService.getInterfaceHistory(dto.getIp(), dto.getLimit(), dto.getTime_till(), dto.getTime_from());
+        return ResponseUtil.ok(object);
+    }
+
+    @ApiOperation("拓扑详情（监控度）")
     @RequestMapping("/topology-layer/layerInfo/GET/getLayerGradeByUuid")
     public Object getLayerByUgetLayerGradeByUuiduid(@RequestBody(required = false) TopoNodeDto dto){
         SysConfig sysConfig = this.sysConfigService.findSysConfigList();
@@ -361,6 +521,94 @@ public class TopologyManagerController {
             return ResponseUtil.ok();
         }
         return ResponseUtil.error();
+    }
+
+    @ApiOperation("拓扑接口状态")
+    @RequestMapping("/topology-layer/layerInfo/GET/interface")
+    public Object links(@RequestBody(required = false) TopoNodeDto dto){
+        SysConfig sysConfig = this.sysConfigService.findSysConfigList();
+        String token = sysConfig.getNspmToken();
+        if(token != null){
+            String url = "/topology-layer/layerInfo/GET/getLayerByUuid";
+            Object object = this.nodeUtil.getBody(dto, url, token);
+            JSONObject result = JSONObject.parseObject(object.toString());
+            if(result.get("content") != null){
+                JSONObject content = JSONObject.parseObject(result.get("content").toString());
+                if(content.getString("links") != null){
+                    // 获取设备ip
+                    List list = new ArrayList();
+                    JSONArray links = JSONArray.parseArray(content.get("links").toString());
+                    for(Object element : links){
+                        JSONObject link = JSONObject.parseObject(element.toString());
+                        Map map = new HashMap();
+                        map.put("from", link.get("from"));
+                        map.put("to", link.get("to"));
+                        String ip = link.getString("description");
+                        if(StringUtils.isEmpty(link.getString("interfaceUuid")))
+                            break;
+                        Object flow = this.zabbixService.flow("192.168.5.112", link.getString("interfaceName"));
+                        Map flowValue = Json.fromJson(Map.class, Json.toJson(flow));
+                        List values = new ArrayList();
+                        if(!flowValue.isEmpty()){
+                            for (Object key : flowValue.keySet()){
+                                JSONObject valueMap = JSONObject.parseObject(Json.toJson(flowValue.get(key)));
+                                valueMap.put("interfaceName", link.get("interfaceName"));
+                                // 计算阈值
+                                Integer received = valueMap.getInteger("received");
+                                Integer sent = valueMap.getInteger("sent");
+                                Integer speed = valueMap.getInteger("speed");
+                                // 计算
+                                Integer flag = 0;
+                                if(received != null && received > 0){
+                                    if(received / speed >= 0.05){
+                                        flag = 1;
+                                    }
+                                }
+                                if(sent != null && sent > 0){
+                                    if(sent / speed >= 0.05){
+                                        flag = 1;
+                                    }
+                                }
+                                valueMap.put("flag", flag);
+                                values.add(valueMap);
+                            }
+                            map.put("flow", values.size() > 0 ? values.get(0) : "");
+                            list.add(map);
+                        }
+                    }
+                    return ResponseUtil.ok(list);
+                }
+            }
+            return ResponseUtil.ok();
+        }
+        return ResponseUtil.error();
+    }
+
+    @ApiOperation("问题")
+    @PostMapping("/topology-layer/problem")
+    public Object problem(@RequestBody ProblemDTO dto){
+        if(StringUtil.isEmpty(dto.getIp())){
+            return ResponseUtil.badArgument("未选中设备");
+        }
+        // 获取hostId
+        HostDTO hostDTO = new HostDTO();
+        Map map = new HashMap();
+        map.put("ip", Arrays.asList(dto.getIp()));
+        hostDTO.setFilter(map);
+        Object obj = this.zabbixHostService.getHost(hostDTO);
+        JSONObject json = JSONObject.parseObject(obj.toString());
+        if(json.get("result") == null){
+            return ResponseUtil.ok();
+        }
+        JSONArray array = JSONArray.parseArray(json.getString("result"));
+        if(array.size() <= 0){
+            return ResponseUtil.ok();
+        }
+        JSONObject result = JSONObject.parseObject(array.getString(0));
+        dto.setIp("");
+        dto.setHostids(result.getString("hostid"));
+        Object object = this.problemService.get(dto);
+        return ResponseUtil.ok(object);
     }
 
     @ApiOperation("拓扑详情")
@@ -632,6 +880,7 @@ public class TopologyManagerController {
         }
         return ResponseUtil.error();
     }
+
     @ApiOperation("路径细节")
     @RequestMapping("/topology-layer/whale/GET/detailedPath/run")
     public Object run(@RequestBody(required = false) TopoNodeDto dto){

@@ -1,5 +1,7 @@
 package com.cloud.tv.vo;
 
+import com.cloud.tv.entity.User;
+
 import java.io.Serializable;
 
 /**
@@ -27,6 +29,13 @@ public class Result implements Serializable {
 
     /** 响应数据 */
     private Object data;
+
+//    private User user;
+//
+//    public User getUser(){return user;}
+//    public void setUser(User user){
+//        this.user=user;
+//    }
 
     public Integer getCode() {
         return code;

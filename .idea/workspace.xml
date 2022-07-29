@@ -1,29 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2e2b035f-18aa-4b6c-b1aa-a61fee3c43a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolocyListManagerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/template.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/templateScore.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/test.ftl" afterDir="false" />
+    <list default="true" id="2e2b035f-18aa-4b6c-b1aa-a61fee3c43a0" name="Default Changelist" comment="zabbix">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_hengyunabc_zabbix_api_0_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_1_7_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/ThresholdManagerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopoRoutesManagerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/utils/ZabbixApiUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixApiManagerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixHostManagerAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/mapper/ThresholdMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/IThresholdService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/ThresholdServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/IHostGroupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ITemplateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ProblemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ZabbixHistoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ZabbixHostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ZabbixItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ZabbixService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/HostGroupServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ProblemServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixHistoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixHostServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixItemServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/net/IpV4Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/ThresholdDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoRoutesDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HistoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostCreateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostGroupDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/ItemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/ParamsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/ProblemDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/TemplateDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/TriggerDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/entity/Threshold.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ThresholdMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_4_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_4_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_12_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_12_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/nspm.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/nspm.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/LicenseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/LicenseFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/LiveRoomManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/LiveRoomManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopoCredentialManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopoCredentialManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolicyCheckManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolicyCheckManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolicyIntegrateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolicyIntegrateController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/utils/RestTemplateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/utils/RestTemplateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/shiro/filter/MyAccessControlFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/shiro/filter/MyAccessControlFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/CheckDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/CheckDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoCredentialDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoCredentialDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metoo_nspm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/metoo_nspm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/UserManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/UserManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/RoomProgramServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/RoomProgramServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoNodeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoNodeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cloud/tv/vo/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cloud/tv/vo/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/test.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/config/shiro/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/config/shiro/ShiroConfig.class" afterDir="false" />
@@ -31,22 +69,22 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/config/dbconfig/DataSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/config/dbconfig/DataSourceConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/config/dbconfig/NspmDataSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/config/dbconfig/NspmDataSourceConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/config/dbconfig/TopologyDataSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/config/dbconfig/TopologyDataSourceConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/admin/action/LiveRoomManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/admin/action/LiveRoomManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/node/TopoCredentialManagerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/node/TopoCredentialManagerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/node/TopoCredentialManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/node/TopoCredentialManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/policy/TopoPolicyCheckManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/policy/TopoPolicyCheckManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/policy/TopoPolicyIntegrateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/policy/TopoPolicyIntegrateController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/utils/RestTemplateUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/utils/RestTemplateUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/admin/action/TestDtoManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/admin/action/TestDtoManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/admin/action/UserManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/admin/action/UserManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/service/impl/RoomProgramServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/service/impl/RoomProgramServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/shiro/filter/MyAccessControlFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/shiro/filter/MyAccessControlFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/dto/CheckDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/dto/CheckDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/dto/TopoCredentialDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/dto/TopoCredentialDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/dto/TopoNodeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/dto/TopoNodeDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/dto/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/vo/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/vo/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/cloud/tv/vo/UserVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/cloud/tv/vo/UserVo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/test.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/nspm.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/nspm.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/nspm.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/nspm.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2022-07-13T17-11-33_115-jvmRun1.dump" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,6 +92,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/metoo_nspm$NspmApplication.ic" NAME="NspmApplication Coverage Results" MODIFIED="1658730710618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1805391043">
@@ -96,161 +137,175 @@
     <session id="-1744415635">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="11" />
+          <entry key="class" value="32" />
           <entry key="css" value="1" />
-          <entry key="ftl" value="2" />
+          <entry key="ftl" value="3" />
           <entry key="html" value="7" />
-          <entry key="java" value="76" />
+          <entry key="java" value="256" />
           <entry key="jsp" value="3" />
           <entry key="log" value="1" />
-          <entry key="properties" value="21" />
-          <entry key="xml" value="3" />
+          <entry key="pom" value="1" />
+          <entry key="properties" value="40" />
+          <entry key="xml" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="11" />
+          <entry key="CLASS" value="32" />
           <entry key="CSS" value="1" />
-          <entry key="FTL" value="2" />
+          <entry key="FTL" value="3" />
           <entry key="HTML" value="7" />
-          <entry key="JAVA" value="76" />
+          <entry key="JAVA" value="256" />
           <entry key="JSP" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="21" />
-          <entry key="XML" value="3" />
+          <entry key="Properties" value="40" />
+          <entry key="XML" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="ftl" value="12" />
+          <entry key="dummy" value="30" />
+          <entry key="ftl" value="128" />
           <entry key="html" value="64" />
-          <entry key="java" value="3151" />
+          <entry key="java" value="18220" />
           <entry key="log" value="1" />
-          <entry key="properties" value="46" />
+          <entry key="properties" value="97" />
+          <entry key="txt" value="6" />
+          <entry key="xml" value="333" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="FTL" value="12" />
+          <entry key="FTL" value="128" />
           <entry key="HTML" value="64" />
-          <entry key="JAVA" value="3151" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="46" />
+          <entry key="JAVA" value="18220" />
+          <entry key="PLAIN_TEXT" value="37" />
+          <entry key="Properties" value="97" />
+          <entry key="SQL" value="27" />
+          <entry key="XML" value="306" />
         </counts>
       </usages-collector>
     </session>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="metoo_nspm" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixHostManagerAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="95" selection-start-line="95" selection-end-line="95" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#370#371#0" expanded="true" />
-                <element signature="e#424#425#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/test.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/FileOutputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="160" column="11" selection-start-line="160" selection-start-column="11" selection-end-line="160" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/BufferedWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="86" column="11" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
-              <folding>
-                <element signature="e#2279#2280#0" expanded="true" />
-                <element signature="e#2327#2328#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.jar!/freemarker/template/Template.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="189" column="40" selection-start-line="189" selection-start-column="31" selection-end-line="189" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.4/spring-web-5.3.4.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.4.3/spring-boot-autoconfigure-2.4.3.jar!/org/springframework/boot/autoconfigure/freemarker/FreeMarkerProperties.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="285">
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.58/fastjson-1.2.58.jar!/com/alibaba/fastjson/JSON.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="173" column="29" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/utils/ZabbixApiUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="367">
+              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/ThresholdManagerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/IThresholdService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/ThresholdServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#526#527#0" expanded="true" />
+                <element signature="e#577#578#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/io/github/hengyunabc/zabbix/api/ZabbixApi.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/io/github/hengyunabc/zabbix/api/DefaultZabbixApi.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/io/github/hengyunabc/zabbix/api/DeleteRequestBuild.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -258,36 +313,45 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="mybatis-config" />
+        <option value="Mybatis-mapper" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>policyUrl</find>
-      <find>grade</find>
-      <find>lo</find>
-      <find>nodeDelete</find>
-      <find>ip</find>
-      <find>getUuid</find>
-      <find>topology-policy/report/policy/policy-list-pie</find>
-      <find>isReload</find>
-      <find>rule-list-search</find>
-      <find>policy-list-pie</find>
-      <find>newestRecord</find>
-      <find>addsrcnatpolicy</find>
-      <find>echa</find>
-      <find>freema</find>
-      <find>updateNode</find>
+      <find>parseHistory2</find>
+      <find>parseHistory</find>
+      <find>start</find>
+      <find>name</find>
+      <find>srcBusinessUuid</find>
+      <find>routeStr</find>
+      <find>addRoute</find>
+      <find>problem</find>
+      <find>host</find>
+      <find>StringUtil.isEmpty(dto.getIp()</find>
+      <find>deviceInfo</find>
+      <find>parseHistoryZeroize</find>
+      <find>CpuUsage</find>
+      <find>sentHistory</find>
+      <find>history</find>
+      <find>time_from</find>
+      <find>anheng</find>
+      <find>templateids</find>
+      <find>hostid</find>
+      <find>selectParentTemplates</find>
+      <find>templates</find>
       <find>id</find>
-      <find>portNumber</find>
-      <find>create</find>
-      <find>loginPassword</find>
-      <find>dataRuleLooseDTOList</find>
-      <find>download</find>
-      <find>select</find>
-      <find>MyAccessControlFilter</find>
-      <find>rmb</find>
+      <find>Request</find>
+      <find>zabbix</find>
+      <find>params</find>
+      <find>httpClient</find>
+      <find>http</find>
+      <find>zabbixApi</find>
+      <find>setJsonrpc</find>
+      <find>hostids</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -296,36 +360,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/aop/NodeServiceAop.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopoNodeManagerAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/PolicyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolocyListManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-prod.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/CheckDto.java" />
-        <option value="$PROJECT_DIR$/logs/nspm.log" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoGenerateManageController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/template.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopoCredentialManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoCredentialDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/NspmApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/utils/RestTemplateUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolicyCheckManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolicyIntegrateController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/LiveRoomManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/dbconfig/DataSourceConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/dbconfig/NspmDataSourceConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/dbconfig/TopologyDataSourceConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/IndexManageController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/LicenseFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/config/shiro/ShiroConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/shiro/filter/MyAccessControlFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-dev.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/test.ftl" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabix4j/Zabix4jManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/ZabbixHostService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ZabbixHostService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ZabbixItemService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixHostServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixItemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-dev.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/vo/Result.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/TriggerDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/ItemDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ZabbixHistoryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixHistoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HistoryDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoNodeDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/net/IpV4Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ProblemService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/RoutesDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoRoutesDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopoRoutesManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/ProblemDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/entity/Threshold.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/IThresholdService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/ThresholdServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/mapper/ThresholdMapper.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/ThresholdDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ThresholdMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ZabbixService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/ITemplateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ITemplateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/TemplateServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/TemplateServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/TemplateServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostGroup.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostGroupDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ProblemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/IHostGroupService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/HostGroupServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostCreateDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/TemplateDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixApiManagerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixHostManagerAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/utils/ZabbixApiUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/ThresholdManagerController.java" />
       </list>
     </option>
   </component>
@@ -334,6 +419,13 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -347,6 +439,11 @@
           <item name="metoo_nspm" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="metoo_nspm" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
       </expand>
       <select />
     </treeState>
@@ -356,13 +453,35 @@
     <option name="width" value="1120" />
     <option name="height" value="625" />
   </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>CodeSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpringJavaInjectionPointsAutowiringInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -374,11 +493,6 @@
             <path>
               <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
               <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -401,15 +515,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="tv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tv" type="462c0819:PsiDirectoryNode" />
-              <item name="shiro" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
@@ -428,59 +533,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="tv" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tv" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="freemarker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="manager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -488,20 +540,92 @@
               <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tv" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
               <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tv" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tv" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="tv" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+              <item name="zabbix" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="metoo_nspm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.github.hengyunabc:zabbix-api:0.0.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.github.hengyunabc:zabbix-api:0.0.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="zabbix-api-0.0.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.github.hengyunabc:zabbix-api:0.0.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="zabbix-api-0.0.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.github.hengyunabc:zabbix-api:0.0.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="zabbix-api-0.0.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="metoo_nspm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.github.hengyunabc:zabbix-api:0.0.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="zabbix-api-0.0.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="zabbix-api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -511,20 +635,26 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1658138347427" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ipnm/pom.xml" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1659001107203" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ipnm" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\project\metoo\metoo_nspm\src\main\java\com\cloud\tv\dto" />
+      <recent name="D:\java\project\metoo\metoo_nspm\src\main\java\com\cloud\tv\core\manager" />
       <recent name="D:\java\project\metoo\metoo_nspm\src\main\resources\static\js" />
       <recent name="D:\java\project\metoo\metoo_nspm\src\main\resources\static\css" />
       <recent name="D:\java\project\metoo\metoo_nspm\src\main\resources\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java\project\metoo\ipnm" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -579,6 +709,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ZabbixServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cloud.tv.core.service.zabbix.impl.ZabbixServiceImpl" />
+      <module name="metoo_nspm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloud.tv.core.service.zabbix.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="NspmApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="metoo_nspm" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.tv.NspmApplication" />
@@ -591,12 +734,14 @@
       <item itemvalue="Application.TopologyManagerController" />
       <item itemvalue="Application.TopoPolicyIntegrateController" />
       <item itemvalue="Application.FreemarkerUtil" />
+      <item itemvalue="Application.ZabbixServiceImpl" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ZabbixServiceImpl" />
+        <item itemvalue="Application.TopologyManagerController" />
         <item itemvalue="Application.FreemarkerUtil" />
         <item itemvalue="Application.TopoPolicyIntegrateController" />
-        <item itemvalue="Application.TopologyManagerController" />
       </list>
     </recent_temporary>
   </component>
@@ -618,37 +763,47 @@
       <workItem from="1657865942304" duration="640000" />
       <workItem from="1657879313584" duration="1641000" />
       <workItem from="1657935102571" duration="10278000" />
-      <workItem from="1658109454944" duration="12823000" />
+      <workItem from="1658109454944" duration="88435000" />
+      <workItem from="1658470828888" duration="23787000" />
+      <workItem from="1658802338423" duration="20146000" />
+      <workItem from="1658887163120" duration="24180000" />
     </task>
+    <task id="LOCAL-00001" summary="zabbix">
+      <created>1658743808005</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1658743808005</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63547000" />
+    <option name="totallyTimeSpent" value="207272000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21375267" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49731183" visible="true" weight="0.20628998" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Favorites" order="5" sideWeight="0.50268817" side_tool="true" weight="0.20202559" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.55266017" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.48642778" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4989339" weight="0.27144408" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32899022" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -658,7 +813,7 @@
       <window_info anchor="right" id="JSF" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="CDI" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.1881663" />
+      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.17857143" />
       <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
@@ -671,6 +826,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="zabbix" />
+    <option name="LAST_COMMIT_MESSAGE" value="zabbix" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -682,7 +841,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java</url>
-          <line>348</line>
+          <line>508</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -736,7 +895,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java</url>
-          <line>18</line>
+          <line>21</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
@@ -754,404 +913,587 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java</url>
-          <line>26</line>
+          <line>29</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java</url>
-          <line>34</line>
+          <line>37</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.java</url>
-          <line>36</line>
+          <line>37</line>
           <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.java</url>
-          <line>54</line>
+          <line>55</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java</url>
+          <line>426</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java</url>
+          <line>442</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixApiManagerController.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java</url>
+          <line>160</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java</url>
+          <line>177</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java</url>
+          <line>461</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java</url>
+          <line>487</line>
+          <properties />
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java</url>
+          <line>118</line>
+          <properties />
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java</url>
+          <line>425</line>
+          <properties />
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java</url>
+          <line>598</line>
+          <properties />
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java</url>
+          <line>589</line>
+          <properties />
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java</url>
+          <line>295</line>
+          <properties />
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java</url>
+          <line>205</line>
+          <properties />
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixHostManagerAction.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixHostManagerAction.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixHostManagerAction.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/utils/ZabbixApiUtil.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="148" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixHostManagerAction.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/utils/ZabbixApiUtil.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixHostManagerAction.java</url>
+          <line>69</line>
+          <properties />
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/utils/ZabbixApiUtil.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/io/github/hengyunabc/zabbix/api/DefaultZabbixApi.class</url>
+          <line>135</line>
+          <properties />
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java</url>
+          <line>67</line>
+          <properties class="com.cloud.tv.core.manager.integrated.node.TopologyManagerController" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
     </breakpoint-manager>
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/RoomProgramDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1525">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        <state relative-caret-position="225">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/register.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/PageDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="73" column="13" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+        <state relative-caret-position="161">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-docker.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/template.html">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/5.1.4/pagehelper-5.1.4.jar!/com/github/pagehelper/Page.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9075">
-          <caret line="363" column="53" selection-start-line="363" selection-start-column="53" selection-end-line="363" selection-end-column="53" />
+        <state relative-caret-position="250">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/manager.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoCredentialDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state relative-caret-position="195">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolocyListManagerController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/jakarta/validation/jakarta.validation-api/2.0.2/jakarta.validation-api-2.0.2.jar!/javax/validation/constraints/Min.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="84" column="5" selection-start-line="65" selection-start-column="4" selection-end-line="84" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="325">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/mapper/ThresholdMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.jar!/freemarker/core/NonHashException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar!/org/apache/commons/beanutils/BeanMap.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="134" column="11" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/utils/RestTemplateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#1002#1003#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolicyIntegrateController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1990">
-          <caret line="1855" column="5" selection-start-line="1855" selection-start-column="5" selection-end-line="1855" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TopoPolicyCheckManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/config/shiro/JwtRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/LiveRoomManagerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="177" column="33" selection-start-line="177" selection-start-column="33" selection-end-line="177" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/entity/SysConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="68" column="19" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/ISysConfigService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/mapper/SysConfigMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="20" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysConfigMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        <state relative-caret-position="475">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/dbconfig/DataSourceConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/ThresholdDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/dbconfig/NspmDataSourceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/dbconfig/TopologyDataSourceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/SysConfigServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#678#679#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/view/action/ConvertAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.4/spring-beans-5.3.4.jar!/org/springframework/beans/factory/annotation/Value.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/httpclient/UrlConvertUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/LicenseFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/config/shiro/MyRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/listerner/MyListnerter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/config/WebConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.5.3/shiro-web-1.5.3.jar!/org/apache/shiro/web/servlet/OncePerRequestFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/IndexManageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/view/action/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <caret line="82" column="48" selection-start-line="82" selection-start-column="48" selection-end-line="82" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/NspmApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="64" column="18" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/config/shiro/ShiroConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-878">
-          <caret line="93" column="48" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="48" />
+        <state relative-caret-position="425">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-web/1.5.3/shiro-web-1.5.3.jar!/org/apache/shiro/web/servlet/AdviceFilter.class">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TopologyTokenMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state>
+          <caret selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/TopologyTokenServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoomProgramMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="-6150" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/NodeUtil.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ThresholdMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="83" column="16" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="16" />
+        <state relative-caret-position="350">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/tools/DateTools.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        <state relative-caret-position="187">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/templateScore.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/shiro/filter/MyAccessControlFilter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/TopoNodeDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="4600">
+          <caret line="193" column="26" selection-start-line="193" selection-start-column="17" selection-end-line="193" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ZabbixService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6900">
+          <caret line="295" column="72" selection-start-line="295" selection-start-column="72" selection-end-line="295" selection-end-column="72" />
           <folding>
-            <element signature="e#747#774#1" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.4.3/spring-boot-autoconfigure-2.4.3.jar!/org/springframework/boot/autoconfigure/freemarker/FreeMarkerProperties.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ProblemService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="150">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.jar!/freemarker/template/Template.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ZabbixHistoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="189" column="40" selection-start-line="189" selection-start-column="31" selection-end-line="189" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/BufferedWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="86" column="11" selection-start-line="86" selection-start-column="11" selection-end-line="86" selection-end-column="11" />
-          <folding>
-            <element signature="e#2279#2280#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/FileOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="160" column="11" selection-start-line="160" selection-start-column="11" selection-end-line="160" selection-end-column="11" />
+        <state relative-caret-position="350">
+          <caret line="20" column="5" selection-start-line="13" selection-start-column="3" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.4/spring-web-5.3.4.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
+        <state relative-caret-position="227">
+          <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/ITemplateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="100">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/policy/TestHtmlComtroller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/integrated/node/TopologyManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="343">
+          <caret line="595" column="50" selection-start-line="595" selection-start-column="50" selection-end-line="595" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/TemplateServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="14" column="40" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/freemarker/FreemarkerUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#370#371#0" expanded="true" />
-            <element signature="e#424#425#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/test.ftl">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/IHostGroupService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/ProblemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="19" column="43" selection-start-line="18" selection-start-column="6" selection-end-line="19" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostGroupDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/zabbix/impl/HostGroupServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/TemplateDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixApiManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.58/fastjson-1.2.58.jar!/com/alibaba/fastjson/JSONObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="227" column="37" selection-start-line="227" selection-start-column="37" selection-end-line="227" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HistoryDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="3798" column="30" selection-start-line="3798" selection-start-column="30" selection-end-line="3798" selection-end-column="30" />
+          <folding>
+            <element signature="e#177013#177014#0" expanded="true" />
+            <element signature="e#177054#177055#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/ParamsDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/concurrent/atomic/AtomicInteger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
+          <folding>
+            <element signature="e#4021#4022#0" expanded="true" />
+            <element signature="e#4085#4086#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.pom">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="373" column="17" selection-start-line="373" selection-start-column="17" selection-end-line="373" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/io/github/hengyunabc/zabbix/api/Request.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#871#872#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#964#965#0" expanded="true" />
+            <element signature="e#1343#1344#0" expanded="true" />
+            <element signature="e#1371#1372#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/META-INF/maven/io.github.hengyunabc/zabbix-api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/io/github/hengyunabc/zabbix/api/RequestBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostCreateDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/dto/zabbix/HostDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/utils/ResponseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/io/github/hengyunabc/zabbix/api/DeleteRequestBuild.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.58/fastjson-1.2.58.jar!/com/alibaba/fastjson/JSON.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="173" column="29" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/io/github/hengyunabc/zabbix/api/ZabbixApi.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/github/hengyunabc/zabbix-api/0.0.2/zabbix-api-0.0.2.jar!/io/github/hengyunabc/zabbix/api/DefaultZabbixApi.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/utils/ZabbixApiUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/zabbix/zabbixapi/ZabbixHostManagerAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/manager/admin/action/ThresholdManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/IThresholdService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cloud/tv/core/service/impl/ThresholdServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1230,11 +1572,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: aspectj:aspectjweaver:1.5.0</last-edited>
+          <last-edited>Maven: io.github.hengyunabc:zabbix-api:0.0.2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.35481024" />
               </list>
             </option>
           </splitter-proportions>

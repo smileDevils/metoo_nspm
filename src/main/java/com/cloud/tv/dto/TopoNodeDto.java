@@ -189,4 +189,8 @@ public class TopoNodeDto<T> extends PageDto<TopoNode> {
     private String subnetMark;
     private String subnetUserType;
 
+    // zabbix
+    private Long time_till;
+    private Long time_from;
+
 }

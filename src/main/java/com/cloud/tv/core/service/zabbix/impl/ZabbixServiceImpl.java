@@ -3,6 +3,7 @@ package com.cloud.tv.core.service.zabbix.impl;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.cloud.tv.core.manager.admin.tools.DateTools;
 import com.cloud.tv.core.service.zabbix.ZabbixHistoryService;
 import com.cloud.tv.core.service.zabbix.ZabbixHostService;
 import com.cloud.tv.core.service.zabbix.ZabbixItemService;
@@ -32,6 +33,8 @@ public class ZabbixServiceImpl implements ZabbixService {
     private ZabbixHistoryService historyService;
     @Autowired
     private IpV4Util ipV4Util;
+    @Autowired
+    private DateTools dateTools;
 
     @Override
     public Object getUsage(String ip, List itemName) {
@@ -183,12 +186,14 @@ public class ZabbixServiceImpl implements ZabbixService {
                     // 获取 CPU 图形
                     if(item.getString("name").equals("CpuUsage")){
                         Object historys =  this.getHistory(Arrays.asList(item.getInteger("itemid")), limit, time_till, time_from);
-                        data.put("CpuUsage", historys);
+                        Object result = this.parseHistoryZeroize(historys, time_till, time_from);
+                        data.put("CpuUsage", result);
                     }
                     // 获取 Mem 图形
                     if(item.getString("name").equals("MemUsage")){
                         Object historys =  this.getHistory(Arrays.asList(item.getInteger("itemid")), limit, time_till, time_from);
-                        data.put("MemUsage", historys);
+                        Object result = this.parseHistoryZeroize(historys, time_till, time_from);
+                        data.put("MemUsage", result);
                     }
 
                 }
@@ -197,6 +202,60 @@ public class ZabbixServiceImpl implements ZabbixService {
         return data;
     }
 
+    public Object parseHistoryZeroize(Object obj, Long time_till, Long time_from){
+        if(obj != null){
+            JSONObject json = JSONObject.parseObject(obj.toString());
+            if (json.getString("result") != null){
+                JSONArray arrays = JSONArray.parseArray(json.getString("result"));
+                Long start = time_from;
+                Long end = null;
+                List list = new ArrayList();
+                for (int j = 0; j < arrays.size(); j++){
+                    JSONObject result = JSONObject.parseObject(arrays.get(j).toString());
+                    if(start != null){
+                        end = result.getLong("clock");
+                        // 比较两个记录时间间隔，间隔为/分钟
+                        Long diff = (end - start) * 1000 ;
+                        long diffMinutes = diff / (60 * 1000) % 60;
+                        if(diffMinutes > 1){
+                            for(long i = 1; i < diffMinutes; i++){
+                                long n = 0;
+                                if(j == 0){
+                                    n = i-1;
+                                }
+                                 String startTime = this.dateTools.longToStr((start * 1000) + n * 60000 , "yyyy-MM-dd HH:mm");
+                                 Map map = new HashMap();
+                                 map.put("clock", startTime);
+                                 map.put("itemid", result.get("itemid"));
+                                 map.put("value", 0);
+                                 list.add(map);
+                            }
+                        }
+                        start = end;
+                        result.put("clock", this.dateTools.longToStr(result.getLong("clock") * 1000, "yyyy-MM-dd HH:mm"));
+                        list.add(result);
+                        // 后补
+                        if(j+1 == arrays.size()){
+                            Long till_diff = (time_till - end) * 1000;
+                            long till_diffMinutes = till_diff / (60 * 1000) % 60;
+                            if(till_diffMinutes > 1){
+                                for(long i = 0; i < diffMinutes; i++){
+                                    String startTime = this.dateTools.longToStr((start * 1000) + i * 60000 , "yyyy-MM-dd HH:mm");
+                                    Map map = new HashMap();
+                                    map.put("clock", startTime);
+                                    map.put("itemid", result.get("itemid"));
+                                    map.put("value", 0);
+                                    list.add(map);
+                                }
+                            }
+                        }
+                    }
+                }
+                return list;
+            }
+        }
+        return null;
+    }
 
     public Object parseHistory2(Object object, Long time_till, Long time_from){
         JSONObject item = JSONObject.parseObject(object.toString());
@@ -233,14 +292,16 @@ public class ZabbixServiceImpl implements ZabbixService {
                         eleMap.put("name", interfaceName);
                     }
                     if(name.contains("sent")){
-                        Object obj = this.getHistory(Arrays.asList(itemid), 10, time_till, time_from);
-                        JSONObject json = JSONObject.parseObject(obj.toString());
-                        eleMap.put("sentHistory", json.get("result"));
+                        Object obj = this.getHistory(Arrays.asList(itemid), null, time_till, time_from);
+                        Object hisotory =  this.parseHistoryZeroize(obj, time_till, time_from);
+//                        JSONObject json = JSONObject.parseObject(hisotory.toString());
+                        eleMap.put("sentHistory", hisotory);
                     }
                     if(name.contains("received")){
-                        Object obj = this.getHistory(Arrays.asList(itemid), 10, time_till, time_from);
-                        JSONObject json = JSONObject.parseObject(obj.toString());
-                        eleMap.put("receivedHistory", json.get("result"));
+                        Object obj = this.getHistory(Arrays.asList(itemid), null, time_till, time_from);
+                        Object hisotory =  this.parseHistoryZeroize(obj, time_till, time_from);
+//                        JSONObject json = JSONObject.parseObject(hisotory.toString());
+                        eleMap.put("receivedHistory", hisotory);
                     }
                     if(name.contains("Speed")){
                         eleMap.put("speed", lastvalue);
@@ -425,15 +486,6 @@ public class ZabbixServiceImpl implements ZabbixService {
             }
         }
         return null;
-    }
-
-    public class MapKeyComparator implements Comparable<Integer>{
-
-        @Override
-        public int compareTo(@NotNull Integer o) {
-
-            return 0;
-        }
     }
 
 

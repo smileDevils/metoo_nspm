@@ -1,5 +1,6 @@
 package com.cloud.tv.core.utils.freemarker;
 
+import com.cloud.tv.vo.Result;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;

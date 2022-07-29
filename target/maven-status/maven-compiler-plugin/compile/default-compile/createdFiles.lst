@@ -16,6 +16,7 @@ com\cloud\tv\core\manager\integrated\node\TopoSubnetManagerController.class
 com\cloud\tv\core\manager\integrated\node\TopoZoneManagerAction.class
 com\cloud\tv\core\service\IMonitorService.class
 com\cloud\tv\core\manager\integrated\monitor\TopoSystemInfoController.class
+com\cloud\tv\core\service\zabbix\ZabbixService.class
 com\cloud\tv\core\manager\integrated\node\TopoNspmBranchManagerAction.class
 com\cloud\tv\core\config\LicenseFilter.class
 com\cloud\tv\core\service\impl\GroupServiceImpl.class
@@ -32,9 +33,11 @@ com\cloud\tv\core\manager\integrated\node\TopoNspmIndexManagerAction.class
 com\cloud\tv\core\service\ILiveRoomService.class
 com\cloud\tv\core\mapper\ProgramPlaybackMapper.class
 com\cloud\tv\core\manager\integrated\sysconfig\SystemConfigManager.class
+com\cloud\tv\dto\zabbix\ItemDTO.class
 com\cloud\tv\core\mapper\UserMapper.class
 com\cloud\tv\core\manager\admin\action\DeviceManagerController.class
 com\cloud\tv\core\manager\admin\tools\MonitorTools.class
+com\cloud\tv\core\service\zabbix\ZabbixHostService.class
 com\cloud\tv\core\shiro\filter\AuthenticationFilter.class
 com\cloud\tv\core\manager\integrated\policy\TestHtmlComtroller.class
 com\cloud\tv\core\manager\integrated\socket\ClientWss$1.class
@@ -43,7 +46,9 @@ com\cloud\tv\core\manager\view\action\ConvertAction.class
 com\cloud\tv\core\utils\httpclient\HttpClientUtils.class
 com\cloud\tv\core\mapper\CredentialMaaper.class
 com\cloud\tv\core\service\impl\ResServiceImpl.class
+com\cloud\tv\core\service\zabbix\impl\ZabbixServiceImpl.class
 com\cloud\tv\core\service\impl\RoomProgramServiceImpl.class
+com\cloud\tv\core\service\zabbix\impl\ZabbixHistoryServiceImpl.class
 com\cloud\tv\core\manager\admin\tools\ShiroUserHolder.class
 com\cloud\tv\core\manager\integrated\metoo\MetooNodeManagerAction.class
 com\cloud\tv\core\manager\integrated\policy\TopoIssuedManagerController.class
@@ -51,6 +56,7 @@ com\cloud\tv\core\shiro\filter\MyAccessControlFilter.class
 com\cloud\tv\core\mapper\GroupMapper.class
 com\cloud\tv\core\shiro\salt\MyByteSource$1.class
 com\cloud\tv\core\video\ChangeVideo$1.class
+com\cloud\tv\core\manager\integrated\node\TopoRoutesManagerController.class
 com\cloud\tv\core\service\impl\MonitorServiceImpl.class
 com\cloud\tv\req\RoleReq.class
 com\cloud\tv\core\manager\view\action\IndexViewController.class
@@ -58,6 +64,7 @@ com\cloud\tv\core\video\ChangeVideo.class
 com\cloud\tv\dto\MonitorDto.class
 com\cloud\tv\core\redis\util\JedisPoolUtil.class
 com\cloud\tv\core\jwt\util\MultiRealmAuthenticator.class
+com\cloud\tv\core\utils\net\IpV4Util.class
 com\cloud\tv\core\manager\view\action\LoginController$1.class
 com\cloud\tv\core\mapper\PolicyMapper.class
 com\cloud\tv\dto\PageDto.class
@@ -80,6 +87,7 @@ com\cloud\tv\entity\RoleGroup.class
 com\cloud\tv\core\manager\admin\action\RoleGroupManagerController.class
 com\cloud\tv\dto\BranchDto.class
 com\cloud\tv\core\manager\integrated\socket\ClientWss.class
+com\cloud\tv\core\service\IThresholdService.class
 com\cloud\tv\dto\TopoNodeDto.class
 com\cloud\tv\core\mapper\RoleMapper.class
 com\cloud\tv\core\manager\integrated\node\TopoCredentialManagerController$1.class
@@ -90,11 +98,15 @@ com\cloud\tv\core\config\dbconfig\NspmDataSourceConfig.class
 com\cloud\tv\dto\ExposureDto.class
 com\cloud\tv\core\service\impl\RoleServiceImpl.class
 com\cloud\tv\config\shiro\PageHelperConfig.class
+com\cloud\tv\dto\zabbix\TemplateDTO.class
+com\cloud\tv\dto\zabbix\HostGroupDTO.class
 com\cloud\tv\core\manager\admin\action\IndexManageController.class
+com\cloud\tv\core\utils\freemarker\FreemarkerUtil.class
 com\cloud\tv\core\mapper\NodeMapper.class
 com\cloud\tv\core\manager\integrated\node\TopoCredentialManagerController.class
 com\cloud\tv\core\manager\integrated\policy\TopoPolicyCheckManagerController.class
 com\cloud\tv\core\manager\integrated\node\TopoCycleManagerController.class
+com\cloud\tv\dto\zabbix\ProblemDTO.class
 com\cloud\tv\core\service\IIndexService.class
 com\cloud\tv\core\service\IPolicyService.class
 com\cloud\tv\core\utils\httpclient\SkipHttpsUtil.class
@@ -103,12 +115,15 @@ com\cloud\tv\core\utils\NodeUtil.class
 com\cloud\tv\core\mapper\OrderMapper.class
 com\cloud\tv\core\shiro\cache\RedisCacheManager.class
 com\cloud\tv\core\service\impl\CredentialServiceImpl.class
+com\cloud\tv\dto\zabbix\HostCreateDTO.class
+com\cloud\tv\core\mapper\ThresholdMapper.class
 com\cloud\tv\core\service\ISysConfigService.class
 com\cloud\tv\config\shiro\ShiroExceptionHandler.class
 com\cloud\tv\core\video\ChangeVideo$2.class
 com\cloud\tv\entity\RoomProgram.class
 com\cloud\tv\core\shiro\tools\SaltUtils.class
 com\cloud\tv\core\mapper\MonitorMapper.class
+com\cloud\tv\dto\TopoRoutesDTO.class
 com\cloud\tv\vo\CourseVo.class
 com\cloud\tv\core\service\IDeviceService.class
 com\cloud\tv\core\manager\integrated\node\TopologyManagerController.class
@@ -116,6 +131,7 @@ com\cloud\tv\vo\UserVo.class
 com\cloud\tv\core\utils\DataStructure\MyEnum.class
 com\cloud\tv\dto\CourseDto.class
 com\cloud\tv\entity\Grade.class
+com\cloud\tv\dto\zabbix\HistoryDTO.class
 com\cloud\tv\core\manager\integrated\policy\TopoPolocyListManagerController.class
 com\cloud\tv\core\utils\httpclient\HttpURLConnection.class
 com\cloud\tv\core\config\dbconfig\DataSourceConfig.class
@@ -147,6 +163,8 @@ com\cloud\tv\core\service\ICredentialService.class
 com\cloud\tv\core\service\impl\OrderServiceImpl.class
 com\cloud\tv\dto\RoleGroupDto.class
 com\cloud\tv\dto\LiveRoomDto.class
+com\cloud\tv\dto\ThresholdDTO.class
+com\cloud\tv\dto\zabbix\TriggerDTO.class
 com\cloud\tv\core\manager\view\tools\roleTools.class
 com\cloud\tv\core\service\impl\AccessoryServiceImpl.class
 com\cloud\tv\core\utils\ListSortUtil.class
@@ -155,6 +173,7 @@ com\cloud\tv\entity\Task.class
 com\cloud\tv\entity\Group.class
 com\cloud\tv\core\service\impl\BannerServiceImpl.class
 com\cloud\tv\core\service\IRoomProgramService.class
+com\cloud\tv\core\service\zabbix\ZabbixHistoryService.class
 com\cloud\tv\config\shiro\SwaggerConfig.class
 com\cloud\tv\entity\BackupFtp.class
 com\cloud\tv\core\config\listerner\MyApplicationContextInitializer.class
@@ -162,6 +181,7 @@ com\cloud\tv\core\utils\DataStructure\MyTest.class
 com\cloud\tv\core\service\impl\InvisibleServiceImpl.class
 com\cloud\tv\core\utils\query\PageUtil.class
 com\cloud\tv\core\manager\admin\action\LiveRoomManagerController.class
+com\cloud\tv\dto\zabbix\HostDTO.class
 com\cloud\tv\dto\UserDto.class
 com\cloud\tv\entity\TopoNode.class
 com\cloud\tv\core\service\IAccessoryService.class
@@ -183,6 +203,7 @@ com\cloud\tv\core\manager\integrated\node\TopoNodeManagerAction$3.class
 com\cloud\tv\core\manager\integrated\policy\TopoGenerateManageController.class
 com\cloud\tv\core\manager\kafka\cosumer\MyConsumer.class
 com\cloud\tv\entity\Vendor.class
+com\cloud\tv\entity\Threshold.class
 com\cloud\tv\core\manager\view\action\BannerViewController.class
 com\cloud\tv\core\shiro\main\ShiroManagerAction.class
 com\cloud\tv\core\manager\admin\action\UserManagerController.class
@@ -194,8 +215,10 @@ com\cloud\tv\core\service\INodeService.class
 com\cloud\tv\core\shiro\tools\ApplicationContextUtils.class
 com\cloud\tv\core\redis\config\RedisConfig.class
 com\cloud\tv\core\manager\integrated\policy\TopoRiskManagerController.class
+com\cloud\tv\core\service\zabbix\impl\ZabbixItemServiceImpl.class
 com\cloud\tv\NspmApplication$Runner.class
 com\cloud\tv\core\jwt\util\JwtToken.class
+com\cloud\tv\core\manager\zabbix\utils\ZabbixApiUtil.class
 com\cloud\tv\core\manager\integrated\socket\ClientWss$2.class
 com\cloud\tv\dto\TopoSysconfigDto.class
 com\cloud\tv\dto\ResDto.class
@@ -208,6 +231,7 @@ com\cloud\tv\core\service\InvisibleService.class
 com\cloud\tv\entity\Item.class
 com\cloud\tv\core\service\TestInitService.class
 com\cloud\tv\core\mapper\RoleGroupMapper.class
+com\cloud\tv\core\service\zabbix\ITemplateService.class
 com\cloud\tv\core\service\IUserService.class
 com\cloud\tv\req\RoomProgramReq.class
 com\cloud\tv\core\manager\admin\action\TestDtoManagerController.class
@@ -219,6 +243,7 @@ com\cloud\tv\core\manager\integrated\dbbackup\BackupController$1.class
 com\cloud\tv\core\http\HttpTools.class
 com\cloud\tv\core\jwt\action\JwtLoginAction.class
 com\cloud\tv\dto\CheckDto.class
+com\cloud\tv\core\service\impl\ThresholdServiceImpl.class
 com\cloud\tv\vo\Result.class
 com\cloud\tv\core\service\impl\RoleResServiceImpl.class
 com\cloud\tv\core\service\ILicenseService.class
@@ -237,6 +262,7 @@ com\cloud\tv\core\shiro\tools\HttpStatus.class
 com\cloud\tv\dto\SysWarnMessageModelDto.class
 com\cloud\tv\req\RoleGroupReq.class
 com\cloud\tv\core\jwt\util\TokenUtil.class
+com\cloud\tv\core\service\zabbix\impl\ProblemServiceImpl.class
 com\cloud\tv\core\manager\admin\action\AdminAuthorController.class
 com\cloud\tv\core\mapper\RoleResMapper.class
 com\cloud\tv\req\VideoReq.class
@@ -249,6 +275,7 @@ com\cloud\tv\entity\LiveRoom.class
 com\cloud\tv\core\manager\integrated\policy\TopoOpenManageController.class
 com\cloud\tv\entity\Monitor.class
 com\cloud\tv\core\manager\admin\tools\Md5Crypt.class
+com\cloud\tv\core\manager\admin\action\ThresholdManagerController.class
 com\cloud\tv\core\manager\view\action\SysConfigViewController.class
 com\cloud\tv\dto\SceneDto.class
 com\cloud\tv\entity\PolicyStatistical.class
@@ -256,7 +283,9 @@ com\cloud\tv\core\service\impl\ProgramPlaybackServiceImpl.class
 com\cloud\tv\core\manager\admin\tools\LicenseTools.class
 com\cloud\tv\core\utils\ShiroFilterUtils.class
 com\cloud\tv\core\manager\view\action\RoomProgramViewAction.class
+com\cloud\tv\dto\zabbix\ParamsDTO.class
 com\cloud\tv\core\config\RestTemplateConfig.class
+com\cloud\tv\core\service\zabbix\impl\TemplateServiceImpl.class
 com\cloud\tv\core\shiro\cache\RedisCache.class
 com\cloud\tv\core\service\IPolicyStatisticalService.class
 com\cloud\tv\NspmApplication.class
@@ -268,13 +297,17 @@ com\cloud\tv\core\service\IOrderService.class
 com\cloud\tv\core\POJO\QueryFilter.class
 com\cloud\tv\core\manager\view\action\RoleController.class
 com\cloud\tv\core\mapper\GradeMapper.class
+com\cloud\tv\core\service\zabbix\IHostGroupService.class
 com\cloud\tv\core\jwt\interceptor\JwtInterceptor.class
 com\cloud\tv\core\video\TestMerge.class
 com\cloud\tv\core\manager\admin\action\ApiVersionController.class
 com\cloud\tv\core\manager\admin\action\ResManagerController.class
+com\cloud\tv\core\manager\zabbix\zabbixapi\ZabbixHostManagerAction.class
 com\cloud\tv\core\service\impl\GradeServiceImpl.class
 com\cloud\tv\core\manager\integrated\policy\TopoPolocyTest.class
+com\cloud\tv\core\manager\zabbix\zabbixapi\ZabbixApiManagerController.class
 com\cloud\tv\core\manager\admin\action\MenuManagerController.class
+com\cloud\tv\core\service\zabbix\ZabbixItemService.class
 com\cloud\tv\core\manager\integrated\utils\RestTemplateUtil.class
 com\cloud\tv\manager\buyer\controller\UserController.class
 com\cloud\tv\dto\TopoCredentialDto.class
@@ -306,6 +339,7 @@ com\cloud\tv\core\utils\DownLoadFileUtil.class
 com\cloud\tv\core\manager\admin\action\RoomProgramManagerController.class
 com\cloud\tv\core\mapper\IssuedMapper.class
 com\cloud\tv\dto\GradeDto.class
+com\cloud\tv\core\service\zabbix\impl\ZabbixHostServiceImpl.class
 com\cloud\tv\entity\Video.class
 com\cloud\tv\core\config\dbconfig\TopologyDataSourceConfig.class
 com\cloud\tv\core\manager\admin\action\NodeManagerAction.class
@@ -329,6 +363,7 @@ com\cloud\tv\core\mq\kafka\KafkaProductDemo.class
 com\cloud\tv\core\utils\ListSortUtil$1.class
 com\cloud\tv\core\mapper\SysConfigMapper.class
 com\cloud\tv\core\service\IUserRoleService.class
+com\cloud\tv\core\service\zabbix\impl\HostGroupServiceImpl.class
 com\cloud\tv\core\manager\admin\tools\DateTools.class
 com\cloud\tv\core\manager\admin\tools\PlayBackTools.class
 com\cloud\tv\entity\TopologyToken.class
@@ -338,3 +373,4 @@ com\cloud\tv\core\shiro\filter\TestFile.class
 com\cloud\tv\core\mapper\UserRoleMapper.class
 com\cloud\tv\core\manager\admin\action\RoleManagerController.class
 com\cloud\tv\core\utils\ListSortUtil$2.class
+com\cloud\tv\core\service\zabbix\ProblemService.class
